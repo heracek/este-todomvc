@@ -9,6 +9,7 @@ export default class State extends EventEmitter {
 
   load(json) {
     this._state = Immutable.fromJS(json)
+    this.emit('change')
   }
 
   save() {

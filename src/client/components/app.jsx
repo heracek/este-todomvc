@@ -12,7 +12,6 @@ export default React.createClass({
 
   componentDidMount() {
     state.on('change', () => {
-      // console.log(JSON.stringify(state.save()))
       // TODO: Use requestAnimationFrame.
 
       // Try thousands todos with and without PureRenderMixin.
@@ -20,6 +19,24 @@ export default React.createClass({
       this.forceUpdate(() => {
         console.timeEnd('whole app re-rendered')
       })
+    })
+
+    // For Om-like app state.
+    document.addEventListener('keypress', e => {
+      if (!e.shiftKey || !e.ctrlKey) return
+      switch (e.keyCode) {
+        case 19: // shift+ctrl+s
+          window._appState = JSON.stringify(state.save())
+          console.log('app state saved')
+          console.log('copy the state to your clipboard by calling copy(_appState)')
+          break
+        case 12: // shift+ctrl+l
+          let stateStr = window.prompt('Path the serialized state into the input')
+          let newState = JSON.parse(stateStr)
+          if (!newState) return
+          state.load(newState)
+          break
+      }
     })
   },
 
@@ -48,6 +65,10 @@ export default React.createClass({
                 PureRenderMixin</a> usage. Add hundreds todos, then play with
                 app. Run app with <b>gulp -p</b> to get React production mode
                 performance.
+              </li>
+              <li>
+                Global Om-like app state. Check <a href="https://www.youtube.com/watch?v=5yHFTN-_mOo">
+                video</a>. Then try shift+ctrl+s and shift+ctrl+l.
               </li>
             </ul>
             <button onClick={addHundredTodos}>Add Hundred Todos</button>
