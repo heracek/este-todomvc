@@ -32,11 +32,11 @@ export const dispatchToken = dispatcher.register((payload) => {
     case actions.onNewTodoFieldChange:
       let {name, value} = data
       switch (name) {
-    		case 'title':
+        case 'title':
           // Field max length should be implemented in store.
-    			value = value.slice(0, MAX_TODO_TITLE_LENGTH)
-    			break
-    	}
+          value = value.slice(0, MAX_TODO_TITLE_LENGTH)
+          break
+      }
       newTodoCursor(todo => todo.set(name, value))
       break
 

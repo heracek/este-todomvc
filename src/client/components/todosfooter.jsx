@@ -19,11 +19,11 @@ export default React.createClass({
         <span id="todo-count">
           <strong>{remaining.size}</strong> {localizedItems} left
         </span>
-  			<ul id="filters">
-  				<li><Link to="home" activeClassName="selected">All</Link></li>
+        <ul id="filters">
+          <li><Link to="home" activeClassName="selected">All</Link></li>
           <li><Link to="active" activeClassName="selected">Active</Link></li>
           <li><Link to="completed" activeClassName="selected">Completed</Link></li>
-  			</ul>
+        </ul>
         {completed.size > 0 &&
           <button
             id="clear-completed"

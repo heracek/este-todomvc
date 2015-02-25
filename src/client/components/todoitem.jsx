@@ -74,7 +74,7 @@ export default React.createClass({
     return (
       <li className={classnames({editing: this.state.editing})}>
         <div className="view">
-  				<input
+          <input
             checked={todo.get('completed')}
             className="toggle"
             onChange={() => toggleTodo(todo)}
@@ -83,11 +83,11 @@ export default React.createClass({
           <label onDoubleClick={this.onTitleDoubleClick}>
             {todo.get('title')}
           </label>
-  				<button
+          <button
             className="destroy"
             onClick={() => destroyTodo(todo)}
           />
-  			</div>
+        </div>
         <input
           className="edit"
           onBlur={this.onEditBlur}

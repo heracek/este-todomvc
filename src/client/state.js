@@ -1,10 +1,10 @@
 import State from '../lib/state'
 
 const state = new State({
-	newTodo: {
-		title: ''
-	},
-	todos: []
+  newTodo: {
+    title: ''
+  },
+  todos: []
 })
 
 export default state

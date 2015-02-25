@@ -6,15 +6,15 @@ var webpackDevServer = require('./webpack/devserver')
 var yargs = require('yargs')
 
 var args = yargs
-	.alias('p', 'production')
-	.argv
+  .alias('p', 'production')
+  .argv
 
 gulp.task('env', function() {
-	process.env.NODE_ENV = args.production ? 'production' : 'development'
+  process.env.NODE_ENV = args.production ? 'production' : 'development'
 })
 
 gulp.task('build-webpack', (args.production ? webpackBuild : webpackDevServer)
-	(makeWebpackConfig(!args.production)))
+  (makeWebpackConfig(!args.production)))
 
 gulp.task('build', ['build-webpack'])
 
