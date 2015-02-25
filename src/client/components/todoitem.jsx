@@ -6,6 +6,8 @@ import {addons} from 'react/addons'
 import {destroyTodo, saveTodo, toggleTodo} from '../todos/actions'
 
 export default React.createClass({
+  // Try add hundreds todos. Editing, removing, toggling etc is still superfast.
+  // With immutable map, all we need it === check.
   mixins: [addons.PureRenderMixin],
 
   propTypes: {

@@ -1,6 +1,6 @@
 import * as actions from './actions'
 import dispatcher from '../dispatcher'
-import {Record} from 'immutable'
+import {Range, Record} from 'immutable'
 import {getRandomString} from '../../lib/getrandomstring'
 import {newTodoCursor, todosCursor} from '../state'
 
@@ -89,4 +89,20 @@ export function getRemaining() {
 
 export function allCompleted() {
   return getTodos().every(isCompleted)
+}
+
+// For performance testing.
+export function addHundredTodos() {
+  todosCursor(todos => {
+    return todos.withMutations(list => {
+      Range(1, 100).forEach(i => {
+        let id = getRandomString()
+        list.push(new TodoRecord({
+          completed: false,
+          id: id,
+          title: `Item #${id}`
+        }).toMap())
+      })
+    })
+  })
 }

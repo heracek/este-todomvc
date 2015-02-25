@@ -4,10 +4,11 @@ import immutable from 'immutable'
 import {addons} from 'react/addons'
 
 export default React.createClass({
-  // Whenever component prop is an immutable structure, use PureRenderMixin.
+  // Try add hunderds todos. Typing new todo is still superfast.
   mixins: [addons.PureRenderMixin],
 
   propTypes: {
+    // Whenever component prop is an immutable structure, use PureRenderMixin.
     todos: React.PropTypes.instanceOf(immutable.List)
   },
 
