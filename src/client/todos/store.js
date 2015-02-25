@@ -21,10 +21,10 @@ export const dispatchToken = dispatcher.register((payload) => {
 
   switch (action) {
     case actions.addTodo:
-      // Create a nice client unique enough id.
-      let id = getRandomString()
       let title = getNewTodo().title.trim()
       if (!title) return
+      // Create a nice client unique enough id.
+      let id = getRandomString()
       todosCursor(todos => todos.push(new TodoRecord({id, title}).toMap()))
       newTodoCursor(todo => new TodoRecord)
       break
