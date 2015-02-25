@@ -20,7 +20,7 @@ export default React.createClass({
           <strong>{remaining.size}</strong> {localizedItems} left
         </span>
   			<ul id="filters">
-  				<li><Link to="all" activeClassName="selected">All</Link></li>
+  				<li><Link to="home" activeClassName="selected">All</Link></li>
           <li><Link to="active" activeClassName="selected">Active</Link></li>
           <li><Link to="completed" activeClassName="selected">Completed</Link></li>
   			</ul>
