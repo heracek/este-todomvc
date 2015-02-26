@@ -6,7 +6,7 @@ import {newTodoCursor, todosCursor} from '../state'
 
 // Note store is state-less. It's must for isomorphic app.
 
-var TodoRecord = Record({
+const TodoRecord = Record({
   completed: false,
   id: '',
   title: ''
@@ -95,7 +95,7 @@ export function allCompleted() {
 export function addHundredTodos() {
   todosCursor(todos => {
     return todos.withMutations(list => {
-      Range(1, 100).forEach(i => {
+      Range(0, 100).forEach(i => {
         let id = getRandomString()
         list.push(new TodoRecord({
           completed: false,
