@@ -39,7 +39,9 @@
 - sync app state in localstorage across tabs, that's how every web app should work
 - app errors handling
 - async actions
-
+- RaF
+- React 0.13 support, react-router is blocking
+- Optional closure tools support, treba protoze jeho raf
 
 ## Credit
 
