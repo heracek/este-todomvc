@@ -35,7 +35,7 @@
 ## Todo
 
 * [ ] [Jest](https://facebook.github.io/jest)
-* [ ] [ESLint](http://eslint.org/), almost [done](https://github.com/eslint/espree/issues/10).
+* [ ] [ESLint](http://eslint.org/), almost [ready](https://github.com/eslint/espree/issues/10).
 * [ ] [flowtype](http://flowtype.org/)
 * [ ] Localization with [formatjs.io](http://formatjs.io)
 * [ ] Sync app state into localStorate across browser tabs/windows.
