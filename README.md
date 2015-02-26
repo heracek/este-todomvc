@@ -47,5 +47,5 @@
 
 ## Credit
 
-Created by [Daniel Steigerwald](http://daniel.steigerwald.cz/)
+Created by [Daniel Steigerwald](http://daniel.steigerwald.cz/), [twitter.com/steida](https://twitter.com/steida)
 
