@@ -33,11 +33,6 @@ export default React.createClass({
     })
   },
 
-  onEditBlur(e) {
-    if (this.state.editing)
-      this.saveTodo()
-  },
-
   onEditChange(e) {
     let title = e.target.value.slice(0, MAX_TODO_TITLE_LENGTH)
     this.setState({title: title})
@@ -55,6 +50,7 @@ export default React.createClass({
   },
 
   saveOrDestroyTodo(e) {
+    if (!this.state.editing) return
     if (!e.target.value.trim()) {
       destroyTodo(this.props.todo)
       return
@@ -90,7 +86,7 @@ export default React.createClass({
         </div>
         <input
           className="edit"
-          onBlur={this.onEditBlur}
+          onBlur={this.saveOrDestroyTodo}
           onChange={this.onEditChange}
           onKeyDown={this.onEditKeyDown}
           ref="edit"
