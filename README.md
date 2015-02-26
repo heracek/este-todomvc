@@ -13,7 +13,7 @@
 - Written in [BabelScript](https://babeljs.io/). Are you kidding? No, the [babeljs.io](http://babeljs.io) seems to be the best JavaScript transpiler. It handles future JavaScripts with [React JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) syntax spiced by [Flowtype](http://flowtype.org/) type [annotations](http://flowtype.org/docs/type-annotations.html#_) already.
 - [React](http://facebook.github.io/react/), [Flux](https://facebook.github.io/flux/), [react-router](https://github.com/rackt/react-router), [immutable.js](http://facebook.github.io/immutable-js/), and more awesomeness.
 - Isomorphic architecture with state-less stores, server rendering, and routing inside expressjs.
-- The state of art performance thanks to [immutable.js](http://facebook.github.io/immutable-js) and [PureRendererMixin](http://facebook.github.io/react/docs/pure-render-mixin.html) combo.
+- The state of art performance thanks to [immutable.js](http://facebook.github.io/immutable-js) and [PureRenderMixin](http://facebook.github.io/react/docs/pure-render-mixin.html) combo.
 - Well tuned dev stack based on [gulp.js](http://gulpjs.com/) and [webpack](http://webpack.github.io/) configured both for dev and production.
 - CSS livereload and webpack module hot reload, so you can tweak React in real time.
 - Vanilla [Flux](https://facebook.github.io/flux/), remember what I told you about frameworks?
