@@ -9,8 +9,6 @@ var webpackDevServer = require('webpack-dev-server')
 
 module.exports = function(webpackConfig) {
   return function(callback) {
-    // It seems webpackDevServer doesn't emit errors, so we can't use gulp-notify.
-    // Webpack callback does not work with webpackDevServer as well.
     new webpackDevServer(webpack(webpackConfig), {
       contentBase: 'http://localhost:8888',
       hot: true,
