@@ -4,9 +4,9 @@
 
 > ES6 React Flux webpack gulp om-like isomorphic immutable k̶i̶t̶c̶h̶e̶n̶s̶i̶n̶k̶ t̶w̶e̶e̶t̶y̶b̶i̶r̶d̶s̶ TodoMVC.
 
-> The most cute web app boilerplate, with almost zero bus factor. Forget about over abstracted frameworks, use sheer libraries and leverage standards.
-
 ![Este Logo](https://cloud.githubusercontent.com/assets/66249/5931133/9e973dfc-a699-11e4-83bc-7b5c6fb58bfd.jpeg)
+
+> The most cute web app boilerplate, with almost zero bus factor. Forget about over abstracted frameworks, use sheer libraries and leverage standards.
 
 ## Features
 
