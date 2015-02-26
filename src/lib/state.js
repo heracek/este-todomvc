@@ -4,15 +4,27 @@ import Immutable from 'immutable'
 export default class State extends EventEmitter {
 
   constructor(opt_json) {
+    this._state = null
+    this._previousState = null
     this.load(opt_json || {})
   }
 
-  load(json) {
-    this._state = Immutable.fromJS(json)
-    this.emit('change')
+  load(json: Object) {
+    this.set(Immutable.fromJS(json))
   }
 
-  save() {
+  set(state) {
+    if (this._state === state) return
+    this._previousState = this._state
+    this._state = state
+    this.emit('change', this._state, this._previousState)
+  }
+
+  get() {
+    return this._state
+  }
+
+  save(): Object {
     return this._state.toJS()
   }
 
@@ -23,10 +35,7 @@ export default class State extends EventEmitter {
   cursor(path) {
     return (update) => {
       if (update) {
-        const newState = this._state.updateIn(path, update)
-        if (newState === this._state) return
-        this._state = newState
-        this.emit('change')
+        this.set(this._state.updateIn(path, update))
       }
       else
         return this._state.getIn(path)
