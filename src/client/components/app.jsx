@@ -5,6 +5,10 @@ import {RouteHandler} from 'react-router'
 
 import {addHundredTodos} from '../todos/store'
 
+// App states history. It's good to have one, so we can replay user story for
+// bug reporting for example.
+const states = []
+
 // Leverage webpack require goodness for feature toggle based dead code removal.
 require('../../../assets/css/app.styl')
 
@@ -12,25 +16,25 @@ export default React.createClass({
 
   componentDidMount() {
     state.on('change', () => {
-      // TODO: Use requestAnimationFrame.
-
       // Try thousands todos with and without PureRenderMixin.
       console.time('whole app re-rendered')
+      // TODO: forceUpdate on requestAnimationFrame.
       this.forceUpdate(() => {
         console.timeEnd('whole app re-rendered')
       })
     })
 
-    // For Om-like app state.
+    // For Om-like app state persistence. Press shift+ctrl+s to save app state
+    // and shift+ctrl+l to load.
     document.addEventListener('keypress', e => {
       if (!e.shiftKey || !e.ctrlKey) return
       switch (e.keyCode) {
-        case 19: // shift+ctrl+s
+        case 19:
           window._appState = JSON.stringify(state.save())
           console.log('app state saved')
           console.log('copy the state to your clipboard by calling copy(_appState)')
           break
-        case 12: // shift+ctrl+l
+        case 12:
           let stateStr = window.prompt('Path the serialized state into the input')
           let newState = JSON.parse(stateStr)
           if (!newState) return
@@ -40,7 +44,13 @@ export default React.createClass({
     })
   },
 
+  onUndoLastChangeClick() {
+    state.set(states[states.length - 2])
+  },
+
   render() {
+    states.push(state.get())
+
     return (
       <DocumentTitle title={'Este.js • TodoMVC'}>
         <div>
@@ -68,10 +78,15 @@ export default React.createClass({
               </li>
               <li>
                 Global Om-like app state. Check <a href="https://www.youtube.com/watch?v=5yHFTN-_mOo">
-                video</a>. Then try shift+ctrl+s and shift+ctrl+l.
+                video</a>. Then try <b>shift+ctrl+s</b> to save app state and <b>
+                shift+ctrl+l</b> to load.
               </li>
             </ul>
             <button onClick={addHundredTodos}>Add Hundred Todos</button>
+            <button
+              disabled={states.length < 2}
+              onClick={this.onUndoLastChangeClick}
+            >Undo Last Change</button>
           </div>
         </div>
       </DocumentTitle>
