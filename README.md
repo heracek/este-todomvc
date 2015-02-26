@@ -27,9 +27,9 @@
 
 ## Run
 
-- `gulp`              - start development
-- `gulp -p`           - run app in production mode
-- `gulp build -p`     - build for continuous integration (CI)
+- `gulp` start development
+- `gulp -p` run app in production mode
+- `gulp build -p` just build for continuous integration (CI)
 
 ## Todo
 
