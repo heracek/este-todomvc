@@ -23,7 +23,8 @@
 
 ```
   git clone https://github.com/steida/este-todomvc.git
-  npm i
+  cd este-todomvc
+  npm install
 ```
 
 ## Run
