@@ -15,6 +15,7 @@
 - Isomorphic architecture with state-less stores, server rendering, and routing inside expressjs.
 - The state of art performance thanks to [immutable.js](http://facebook.github.io/immutable-js) and [PureRendererMixin](http://facebook.github.io/react/docs/pure-render-mixin.html) combo.
 - Well tuned dev stack based on [gulp.js](http://gulpjs.com/) and [webpack](http://webpack.github.io/) configured both for dev and production.
+- CSS livereload and webpack module hot reload, so you can tweak React components in real time.
 - Vanilla [Flux](https://facebook.github.io/flux/), remember what I told you about frameworks?
 - Isomorphic 404 and 500 pages.
 
