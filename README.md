@@ -10,7 +10,7 @@
 
 ## Features
 
-- Written in [BabelScript](https://babeljs.io/). Are you kidding me? No, the [babeljs.io](http://babeljs.io) is the best JavaScript transpiler. It handles future JavaScripts with [React JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) syntax spiced by [Flowtype](http://flowtype.org/) type [annotations](http://flowtype.org/docs/type-annotations.html#_).
+- Written in [BabelScript](https://babeljs.io/). Are you kidding? No, the [babeljs.io](http://babeljs.io) seems to be the best JavaScript transpiler. It handles future JavaScripts with [React JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) syntax spiced by [Flowtype](http://flowtype.org/) type [annotations](http://flowtype.org/docs/type-annotations.html#_).
 - [React](http://facebook.github.io/react/), [Flux](https://facebook.github.io/flux/), [react-router](https://github.com/rackt/react-router), [immutable.js](http://facebook.github.io/immutable-js/), and more awesomeness.
 - Isomorphic architecture with state-less stores, server rendering, and routing inside expressjs.
 - The state of art performance thanks to [immutable.js](http://facebook.github.io/immutable-js) and [PureRendererMixin](http://facebook.github.io/react/docs/pure-render-mixin.html) combo.
@@ -34,14 +34,16 @@
 
 ## Todo
 
-- jest, eslint, flowlang
-- localization with http://formatjs.io
-- sync app state in localstorage across tabs, that's how every web app should work
-- app errors handling
-- async actions
-- RaF
-- React 0.13 support, react-router is blocking
-- Optional closure tools support, treba protoze jeho raf
+* [ ] [Jest](https://facebook.github.io/jest)
+* [ ] [ESLint](http://eslint.org/), almost [done](https://github.com/eslint/espree/issues/10)
+* [ ] [flowtype](http://flowtype.org/)
+* [ ] Localization with [formatjs.io](http://formatjs.io)
+* [ ] Sync app state into localStorate across browser tabs/windows.
+* [ ] Global app errors handling with last several states and dispatched actions
+* [ ] Async actions and [CSP channels](https://github.com/ubolonton/js-csp)
+* [ ] [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+* [ ] React 0.13 support
+* [ ] An optional Closure Tools support.
 
 ## Credit
 
